@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"net/http"
 
-	cfg "github.com/brilianpmw/synapsis/internal/pkg/config"
-	pqRepo "github.com/brilianpmw/synapsis/internal/repository/postgre"
-	httpUser "github.com/brilianpmw/synapsis/internal/user/delivery/http"
-	"github.com/brilianpmw/synapsis/internal/user/usecase"
+	cfg "github.com/brilianpmw/linknau/internal/pkg/config"
+	pqRepo "github.com/brilianpmw/linknau/internal/repository/postgre"
+	httpUser "github.com/brilianpmw/linknau/internal/user/delivery/http"
+	"github.com/brilianpmw/linknau/internal/user/usecase"
 	"github.com/go-chi/chi"
 )
 

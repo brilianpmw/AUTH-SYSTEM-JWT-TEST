@@ -4,7 +4,7 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/brilianpmw/synapsis/presentation"
+	"github.com/brilianpmw/linknau/presentation"
 	"github.com/golang-jwt/jwt/v5"
 )
 

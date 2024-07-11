@@ -5,8 +5,8 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/brilianpmw/synapsis/internal/pkg/config"
-	"github.com/brilianpmw/synapsis/presentation"
+	"github.com/brilianpmw/linknau/internal/pkg/config"
+	"github.com/brilianpmw/linknau/presentation"
 )
 
 type MockUserUsecase struct {

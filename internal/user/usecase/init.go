@@ -1,6 +1,6 @@
 package usecase
 
-import "github.com/brilianpmw/synapsis/presentation"
+import "github.com/brilianpmw/linknau/presentation"
 
 type Repositories struct {
 	User presentation.IUser

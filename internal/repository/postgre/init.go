@@ -1,7 +1,7 @@
 package postgre
 
 import (
-	"github.com/brilianpmw/synapsis/internal/pkg/database"
+	"github.com/brilianpmw/linknau/internal/pkg/database"
 )
 
 // Postgre : Main struct of this repository

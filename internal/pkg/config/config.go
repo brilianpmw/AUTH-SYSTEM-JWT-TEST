@@ -3,7 +3,7 @@ package config
 import (
 	"time"
 
-	"github.com/brilianpmw/synapsis/presentation"
+	"github.com/brilianpmw/linknau/presentation"
 )
 
 type Config struct {

@@ -1,8 +1,8 @@
 package http
 
 import (
-	"github.com/brilianpmw/synapsis/internal/pkg/middleware"
-	"github.com/brilianpmw/synapsis/presentation"
+	"github.com/brilianpmw/linknau/internal/pkg/middleware"
+	"github.com/brilianpmw/linknau/presentation"
 	"github.com/go-chi/chi"
 )
 

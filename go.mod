@@ -1,4 +1,4 @@
-module github.com/brilianpmw/synapsis
+module github.com/brilianpmw/linknau
 
 go 1.22
 

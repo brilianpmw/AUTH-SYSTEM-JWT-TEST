@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/brilianpmw/synapsis/presentation"
+	"github.com/brilianpmw/linknau/presentation"
 )
 
 func (a *HttpHandler) Login(w http.ResponseWriter, r *http.Request) {

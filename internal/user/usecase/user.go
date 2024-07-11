@@ -7,7 +7,7 @@ import (
 
 	"github.com/golang-jwt/jwt/v5"
 
-	"github.com/brilianpmw/synapsis/presentation"
+	"github.com/brilianpmw/linknau/presentation"
 )
 
 func (uc *Usecase) DoLogin(ctx context.Context, req presentation.LoginRequest) (string, error) {
