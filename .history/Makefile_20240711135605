@@ -1,5 +1,0 @@
-run-http: build
-	./cmd
-
-build:
-	go build -v -o cmd/app.go

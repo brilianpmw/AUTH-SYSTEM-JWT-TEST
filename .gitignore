@@ -32,3 +32,5 @@ go.work.d/
 
 # Vendor directory
 vendor/
+
+.history
