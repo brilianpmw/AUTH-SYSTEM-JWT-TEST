@@ -1,0 +1,8 @@
+run-http: 
+	go run cmd/app.go
+
+build:
+	go build -v -o cmd/app.go
+
+test-cover:
+	@go test -v -cover -race -count=1 ./... -coverprofile=coverage.out

@@ -1,0 +1,65 @@
+version: "3.1"
+services:
+  shop_quest_postgres:
+    image: postgres:15.1
+    ports:
+      - "7432:5432"
+    environment:
+      POSTGRES_DB: shop_quest
+      POSTGRES_USER: the_patriot
+      POSTGRES_PASSWORD: lalilulelo
+    volumes:
+      - shop_quest_db_data:/var/lib/postgresql/data
+
+  shop_quest_redis:
+    image: redis:6-alpine
+    command: redis-server --requirepass abangj
+    ports:
+      - "8379:6379"
+
+  shop_quest_nsqd:
+    image: nsqio/nsq:v1.2.1
+    command: /nsqd --broadcast-address=0.0.0.0 --http-address 0.0.0.0:4151 --lookupd-tcp-address=shop_quest_nsqlookupd:4160
+    depends_on:
+      - shop_quest_nsqlookupd
+    network_mode: "service:shop_quest_nsqlookupd"
+
+  shop_quest_nsqadmin:
+    image: nsqio/nsq:v1.2.1
+    command: /nsqadmin --lookupd-http-address shop_quest_nsqlookupd:4161
+    depends_on:
+      - shop_quest_nsqlookupd
+    network_mode: "service:shop_quest_nsqlookupd"
+
+  shop_quest_nsqlookupd:
+    image: nsqio/nsq:v1.2.1
+    command: /nsqlookupd
+    ports:
+      - "4160:4160" # NSQLookupd
+      - "4161:4161" # NSQLookupd
+      - "4171:4171" # NSQAdmin
+      - "4150:4150" # NSQd
+      - "4151:4151" # NSQd
+
+  shop_quest_sonarqube:
+    image: mwizner/sonarqube:8.9.5-community
+    profiles:
+      - sonar
+    environment:
+      SONAR_FORCEAUTHENTICATION: "false"
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+      - sonarqube_logs:/opt/sonarqube/logs
+    ports:
+      - "21000:9000"
+
+volumes:
+  sonarqube_data:
+  sonarqube_extensions:
+  sonarqube_logs:
+  sonarqube_data_x86:
+  sonarqube_extensions_x86:
+  sonarqube_logs_x86:
+  shop_quest_db_data:
+    driver: local
